@@ -1,6 +1,29 @@
 # Workshop Api Testing in Javascript
+Bienvenido al Workshop de API Testing. Durante el taller exploraremos los conocimientos necesarios para construir pruebas automaticas de API usando Axios, Mocha y Chai. Durante el taller exploraremos la configuración de un proyecto desde cero, prepararlo para un proceso de integración continua por medio de Github Actions e interactuar con diferentes métodos o verbos HTTP.
+Para el desarrollo del taller usaremos [GitHub](https://github.com/) y [GitHub Flow](https://guides.github.com/introduction/flow/) para realizar la entrega de cada ejercicio practico.
 
-This is a Workshop about Api Testing in JavaScript
+Ten en cuenta tener estudiados ciertos conceptos importantes (te dejamos unos enlaces :sunglasses:):
+
+* [Git](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/)
+* [JavaScript](https://javascript.info/)
+
+## Tabla de contenidos
+1. [Configuración inicial del proyecto](#configuración-inicial-del-proyecto)
+1. [Primera Prueba de API](#primera-prueba-de-api)
+1. [Integración Continua](#integración-continua)
+1. [Reporte de Pruebas](#reporte-de-pruebas)
+1. [Verificación de Código Estático](#verificación-de-código-estático)
+1. [Autenticación en GitHub](#autenticación-en-github)
+1. [Consumiendo Métodos GET](#consumiendo-métodos-get)
+1. [Consumiendo Métodos PUT](#consumiendo-métodos-put)
+1. [Consumiendo métodos POST y PATCH](#consumiendo-métodos-post-y-patch)
+1. [Consumiendo un DELETE y un recurso inexistente](#consumiendo-un-delete-y-un-recurso-inexistente)
+1. [Consumiendo HEAD y redireccionando peticiones](#consumiendo-head-y-redireccionando-peticiones)
+1. [Query parameters](#query-parameters)
+1. [Validación de Esquemas](#validación-de-esquemas)
+1. [Librería Alterna de Clientes](#librería-alterna-de-clientes)
+1. [Futuros Temas](#futuros-temas)
+1. [Aviso](#aviso)
 
 ## Stages
 
