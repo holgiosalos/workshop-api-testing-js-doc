@@ -38,12 +38,14 @@ En esta primera parte se creará un repositorio y se realizaran las configuracio
 1. A continuación realice el primer commit y suba los cambios a nuestro repositorio remoto de GitHub, digitando los siguientes comandos en tu consola favorita, cada linea es un comando distinto:
 
     ```bash
-    echo "# cypress-training" >> README.md
+    echo "# workshop-api-testing-js" >> README.md
     git init
     git add README.md
     git add .gitignore
     git commit -m "first commit"
-    git remote add origin https://github.com/<usuario>/cypress-training.git
+    git branch -M main
+    SI USAN HTTPS USAR ESTE COMANDO -> git remote add origin https://github.com/<usuario>/workshop-api-testing-js.git
+    SI USAN SSH USAR ESTE COMANDO -> git remote add origin git@github.com:<usuario>/workshop-api-testing-js.git
     git push -u origin main
     ```
 
@@ -107,16 +109,16 @@ En esta parte se creará un proyecto node desde 0 y se configurará la primera p
 
 1. Ejecutar el comando `npm test` y comprobar que la prueba pasa de forma satisfactoria
 1. Crear el archivo **LICENSE** en la raíz del proyecto con lo especificado en <https://en.wikipedia.org/wiki/MIT_License> (_Tenga en cuanta cambiar el año y el copyright holders_)
-1. Crear una rama llamada `initial-steup`
+1. Crear una rama llamada `initial-setup`
 1. Realizar un `commit` donde incluya los 4 archivos modificados con el mensaje **“setup mocha configuration”** y subir los cambios al repositorio
 1. Crear un PR y esperar por la aprobación o comentarios de los revisores
-1. Una vez aprobado realizar el merge a master seleccionando la opción **“squash and merge”**.
+1. Una vez aprobado realizar el merge a main seleccionando la opción **“squash and merge”**.
 
 ### Primera Prueba de API
 
 En esta sesión, crearemos las primeras pruebas consumiendo de distintas formas servicios API Rest. Utilizaremos una librería cliente llamada **axios** y otra que contiene un enumerador de los principales códigos de respuesta.
 
-1. Crear una nueva rama a partir de master: `git checkout -b <new-branch>`
+1. Crear una nueva rama a partir de main: `git checkout -b <new-branch>`
 1. Instalar las dependencia de desarrollo **http-status-codes**
 
     ```sh
@@ -171,7 +173,7 @@ En esta sesión, crearemos las primeras pruebas consumiendo de distintas formas 
 1. Ejecutar las pruebas.
 1. Agregar pruebas consumiendo servicios **HEAD**, **PATCH**, **PUT**, **DELETE**. Utilice <https://httpbin.org/> para encontrar los servicios y la documentación de [axios](https://axios-http.com/docs/intro)
 1. Elimine el archivo `test/HelloWord.test.js`
-1. Haga commit y push de los cambios, creen un PR y solicite la revisión. Una vez aprobado haga merge con master
+1. Haga commit y push de los cambios, creen un PR y solicite la revisión. Una vez aprobado haga merge con main
 
 ### Integración Continua
 
@@ -209,7 +211,7 @@ En esta sesión se configurará la integración continua con Github Actions, adi
 1. Modifique el script de **test** del package.json agregando al final `-t 5000`
 1. Cree un PR
 1. Verificar que la ejecución del action termine correctamente
-1. Ir a la configuración del repositorio y modifique el branch protegido master activando github actions como requerido
+1. Ir a la configuración del repositorio y modifique el branch protegido main activando github actions como requerido
 1. Solicite revisión del PR
 
 ### Reporte de Pruebas
