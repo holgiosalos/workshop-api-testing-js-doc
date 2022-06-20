@@ -8,6 +8,7 @@ Ten en cuenta tener estudiados ciertos conceptos importantes (te dejamos unos en
 * [JavaScript](https://javascript.info/)
 
 ## Tabla de contenidos
+1. [Creación y configuración del repositorio](#creación-y-configuración-del-repositorio)
 1. [Configuración inicial del proyecto](#configuración-inicial-del-proyecto)
 1. [Primera Prueba de API](#primera-prueba-de-api)
 1. [Integración Continua](#integración-continua)
@@ -27,14 +28,30 @@ Ten en cuenta tener estudiados ciertos conceptos importantes (te dejamos unos en
 
 ## Stages
 
-### Configuración inicial del proyecto
+### Creación y configuración del repositorio
+En esta primera parte se creará un repositorio y se realizaran las configuraciones iniciales, antes de comenzar el workshop. 
 
-En esta primera parte se creará un proyecto node desde 0 y se configurará la primera prueba utilizando mocha. Adicionalmente este proyecto se montará en Github
-
-1. Crear un repositorio en GitHub con el nombre de `workshop-api-testing-js`
+1. Crear un repositorio en GitHub con el nombre de `workshop-api-testing-js` (previo requisito disponer de una cuenta en GitHub, no seleccione ninguna opcion de inicializacion de repositorio).
 1. Agregar al repositorio la siguiente descripción: `This is a Workshop about Api Testing in JavaScript`
-1. Seguir las instrucciones para realizar el primer commit
-1. En la configuración del repositorio de GitHub en la opción Branches proteja la rama `Master` indicando que los PR requieran revisión antes de mergear y que requiera la comprobación del estado antes de hacer merge
+1. Crear localmente una carpeta con el nombre de **workshop-api-testing-js** y luego sitúese dentro de la carpeta.
+1. Crear el archivo **.gitignore** en la raíz del proyecto, luego ingrese a la página <https://www.toptal.com/developers/gitignore> y en el campo de texto digite su sistema operativo (ej: windows, osx, macos) y selecciónelo de la lista de autocompletar. Repita este paso para su entorno de desarrollo (ej:vscode, sublime, intellij, jetbrains), también agregue la palabra `node`. Presione el botón "Create" para crear el archivo que contendrá una lista de carpetas y archivos de exclusión y copie su contenido dentro del archivo **.gitignore** (es muy importante que este archivo quede bien generado, y su sombre sea .gitignore, sin ninguna extension adicional).
+1. A continuación realice el primer commit y suba los cambios a nuestro repositorio remoto de GitHub, digitando los siguientes comandos en tu consola favorita, cada linea es un comando distinto:
+
+    ```bash
+    echo "# cypress-training" >> README.md
+    git init
+    git add README.md
+    git add .gitignore
+    git commit -m "first commit"
+    git remote add origin https://github.com/<usuario>/cypress-training.git
+    git push -u origin main
+    ```
+
+1. Proteger la rama `main` para que los pull request requieran revisión de otros desarrolladores y se compruebe el estado de nuestros test ("ok" :heavy_check_mark: o "fallaron" :x:) antes de hacer un merge a la rama.
+
+    Ir a Settings > Branches adicionamos una regla dando click en **add rule**. Escribimos `main` en el campo de **branch name pattern**. Una vez hecho eso, damos click en las siguientes opciones:
+    ![branch rules](media/branch_protection_configuration.png)
+
 1. Dentro del menu colaboradores agregar a:
    * [holgiosalos](https://github.com/holgiosalos)
    * [danielgalvis98](https://github.com/danielgalvis98)
@@ -44,11 +61,16 @@ En esta primera parte se creará un proyecto node desde 0 y se configurará la p
    * [manuelq12](https://github.com/manuelq12)
    * [Valeryibarra](https://github.com/Valeryibarra)
    * [veronicatofino](https://github.com/veronicatofino)
+
+### Configuración inicial del proyecto
+
+En esta parte se creará un proyecto node desde 0 y se configurará la primera prueba utilizando mocha.
+
 1. Crear una carpeta en la raíz del proyecto llamada `.github` con un archivo llamado `CODEOWNERS` (sin extensión) con lo siguiente:
     ```js
     * @holgiosalos @danielgalvis98 @kliver98 @AlejaGonzalezV @NicolasB2 @manuelq12 @Valeryibarra @veronicatofino
     ```
-1. [Instalar NodeJS](https://nodejs.org/es/download/package-manager/) en su equipo si no lo tiene instalado
+1. [Instalar NodeJS](https://nodejs.org/es/download/package-manager/) en su equipo si no lo tiene instalado (version sugerida `v16.14.0`)
 1. Ejecutar en una consola `npm init` dentro de la ruta donde se encuentra el repositorio y colocar la siguiente información:
 
     | Parametro          | Valor                                              |
@@ -84,8 +106,8 @@ En esta primera parte se creará un proyecto node desde 0 y se configurará la p
     ```
 
 1. Ejecutar el comando `npm test` y comprobar que la prueba pasa de forma satisfactoria
-1. Crear el archivo **.gitignore** en la raíz del proyecto. Ingresar a la página <https://www.gitignore.io/> y en el área de texto  agregar el _sistema operativo_, _IDE's_ y _NodeJS_, ejemplo _OSX Node VisualStudioCode_. Genere el archivo y cópielo dentro del archivo **.gitignore**
 1. Crear el archivo **LICENSE** en la raíz del proyecto con lo especificado en <https://en.wikipedia.org/wiki/MIT_License> (_Tenga en cuanta cambiar el año y el copyright holders_)
+1. Crear una rama llamada `initial-steup`
 1. Realizar un `commit` donde incluya los 4 archivos modificados con el mensaje **“setup mocha configuration”** y subir los cambios al repositorio
 1. Crear un PR y esperar por la aprobación o comentarios de los revisores
 1. Una vez aprobado realizar el merge a master seleccionando la opción **“squash and merge”**.
